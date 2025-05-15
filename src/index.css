@@ -1,0 +1,89 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 43 26% 98%;
+    --foreground: 36 33% 15%;
+
+    --card: 43 26% 98%;
+    --card-foreground: 36 33% 15%;
+
+    --popover: 43 26% 98%;
+    --popover-foreground: 36 33% 15%;
+
+    --primary: 36 33% 15%;
+    --primary-foreground: 43 26% 98%;
+
+    --secondary: 36 23% 59%;
+    --secondary-foreground: 43 26% 98%;
+
+    --muted: 36 13% 90%;
+    --muted-foreground: 36 13% 40%;
+
+    --accent: 20 31% 87%;
+    --accent-foreground: 36 33% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 43 26% 98%;
+
+    --border: 36 23% 80%;
+    --input: 36 23% 80%;
+    --ring: 36 33% 15%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-calabash-baobab text-calabash-obsidian font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold;
+  }
+
+  .container-custom {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-calabash-shea text-white font-medium py-2 px-6 rounded-md hover:bg-opacity-90 transition-all duration-200;
+  }
+
+  .product-card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg;
+  }
+
+  .nav-link {
+    @apply relative font-medium hover:text-calabash-shea transition-colors;
+  }
+
+  .nav-link::after {
+    @apply content-[''] absolute left-0 bottom-0 w-0 h-0.5 bg-calabash-shea transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .active-nav-link {
+    @apply text-calabash-shea;
+  }
+
+  .active-nav-link::after {
+    @apply w-full;
+  }
+}
